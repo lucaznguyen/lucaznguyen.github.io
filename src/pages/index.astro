@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import NewsTimeline from '../components/NewsTimeline.astro';
+import AwardBadge from '../components/AwardBadge.astro';
+import { profile, researchInterests } from '../data/profile';
+import { featuredPublications } from '../data/publications';
+import { news } from '../data/news';
+import { awards } from '../data/awards';
+---
+<BaseLayout>
+  <Hero />
+  <Marquee items={profile.keywords} />
+
+  <section class="section section-blue">
+    <div class="container section-head split-head">
+      <div>
+        <p class="section-label">/ SELECTED WORK</p>
+        <h2>Selected research works</h2>
+      </div>
+      <a class="button button-ghost" href="/publications/">All publications</a>
+    </div>
+    <div class="container publication-grid featured-grid">
+      {featuredPublications.map((publication) => <PublicationCard publication={publication} compact />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-head">
+      <p class="section-label">/ RESEARCH</p>
+      <h2>Research interests</h2>
+      <p>Robust, private, and adaptive learning systems for real-world data shifts.</p>
+    </div>
+    <div class="container research-grid">
+      {researchInterests.map((interest, index) => <ResearchCard {...interest} index={index + 1} />)}
+    </div>
+  </section>
+
+  <section class="section section-yellow">
+    <div class="container section-head split-head">
+      <div>
+        <p class="section-label">/ NEWS</p>
+        <h2>Latest updates</h2>
+      </div>
+      <a class="button button-dark" href="/news/">News & awards</a>
+    </div>
+    <div class="container">
+      <NewsTimeline items={news} limit={5} />
+    </div>
+  </section>
+
+  <section class="section awards-section">
+    <div class="container section-head">
+      <p class="section-label">/ HONORS</p>
+      <h2>Awards, competitions, and mathematical roots</h2>
+    </div>
+    <div class="container award-grid compact-awards">
+      {awards.slice(0, 5).map((award) => <AwardBadge award={award} />)}
+    </div>
+  </section>
+
+  <section class="section cta-panel-section">
+    <div class="container cta-panel">
+      <p class="section-label">/ TALKS</p>
+      <h2>Talks, presentations, and research conversations</h2>
+      <p>Open to seminars and collaborations on trustworthy AI, federated learning, and continual learning.</p>
+      <div class="hero-actions">
+        <a class="button button-green" href="/talks/">View speaking topics</a>
+        <a class="button button-dark" href={profile.links.email}>Invite me to speak</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

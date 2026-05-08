@@ -1,0 +1,6 @@
+<svg width="420" height="140" viewBox="0 0 420 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">VISHC placeholder badge</title>
+  <rect x="5" y="5" width="410" height="130" rx="30" fill="#FFE45C" stroke="#101010" stroke-width="10"/>
+  <rect x="48" y="43" width="64" height="64" rx="18" fill="#2454FF" stroke="#101010" stroke-width="6"/>
+  <text x="136" y="80" font-family="Arial, sans-serif" font-size="42" font-weight="800" fill="#101010">VISHC</text>
+</svg>

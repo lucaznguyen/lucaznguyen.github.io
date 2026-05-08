@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+<BaseLayout title="CV" description="CV page for Thinh Nguyen (Lucaz).">
+  <section class="page-hero cv-hero">
+    <div class="container narrow-hero">
+      <p class="section-label">/ CV</p>
+      <h1>CV coming soon.</h1>
+      <p>The CV download will be enabled after a real <code>public/cv.pdf</code> file is added.</p>
+      <div class="hero-actions">
+        {profile.cvAvailable ? (
+          <a class="button button-dark" href={profile.cvPath} download>Download CV</a>
+        ) : (
+          <button class="button button-disabled" type="button" disabled>Download CV unavailable</button>
+        )}
+        <a class="button button-green" href={profile.links.email}>Email for CV</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

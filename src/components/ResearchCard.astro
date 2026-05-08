@@ -1,0 +1,18 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  index: number;
+}
+
+const { title, description, tags, index } = Astro.props;
+---
+<article class="research-card card-lift">
+  <div class="research-card-number">{String(index).padStart(2, '0')}</div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <div class="tag-list">
+    {tags.map((tag) => <span>{tag}</span>)}
+  </div>
+</article>

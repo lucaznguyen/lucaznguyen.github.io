@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import Marquee from '../components/Marquee.astro';
+import { profile, researchInterests } from '../data/profile';
+---
+<BaseLayout title="Research" description="Research interests of Thinh Nguyen (Lucaz): trustworthy AI, federated learning, continual learning, and domain generalization.">
+  <section class="page-hero research-hero">
+    <div class="container narrow-hero">
+      <p class="section-label">/ RESEARCH</p>
+      <h1>Researching AI systems that stay reliable when the world changes.</h1>
+      <p>My work asks how learning systems can remain robust, private, and adaptive when data is distributed across clients, domains, and time.</p>
+    </div>
+  </section>
+  <Marquee items={profile.keywords} />
+
+  <section class="section">
+    <div class="container research-grid large-research-grid">
+      {researchInterests.map((interest, index) => <ResearchCard {...interest} index={index + 1} />)}
+    </div>
+  </section>
+
+  <section class="section section-blue">
+    <div class="container research-map">
+      <p class="section-label">/ RESEARCH MAP</p>
+      <h2>How the threads connect</h2>
+      <div class="map-grid">
+        <div class="map-node">Distributed data</div>
+        <div class="map-node">Domain shift</div>
+        <div class="map-node">Privacy constraints</div>
+        <div class="map-node">Changing tasks</div>
+        <div class="map-node map-node-large">Trustworthy learning systems</div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

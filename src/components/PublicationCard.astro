@@ -1,0 +1,45 @@
+---
+import type { Publication } from '../data/types';
+
+interface Props {
+  publication: Publication;
+  compact?: boolean;
+}
+
+const { publication, compact = false } = Astro.props;
+const usableLinks = Object.entries(publication.links ?? {}).filter(([, href]) => {
+  if (!href) return false;
+  const normalized = String(href).toLowerCase();
+  return !['unavailable', 'not applicable', 'not publicly available'].includes(normalized);
+});
+const searchable = [
+  publication.status,
+  publication.featured ? 'featured' : '',
+  ...publication.tags
+].join(' ').toLowerCase();
+---
+<article class={`publication-card card-lift ${publication.featured ? 'is-featured' : ''} ${compact ? 'publication-card-compact' : ''}`} data-publication-card data-search={searchable}>
+  <div class="publication-topline">
+    <span>{publication.venue}</span>
+    <span>{publication.year}</span>
+  </div>
+  <div class="publication-title-row">
+    <h3>{publication.title}</h3>
+    {publication.featured && <span class="mini-sticker">Featured</span>}
+  </div>
+  <p class="authors">{publication.authors}</p>
+  <p class="summary">{compact ? publication.summary : publication.description}</p>
+  <div class="publication-meta-row">
+    <span class="status-pill">{publication.status}</span>
+    <div class="tag-list small-tags">
+      {publication.tags.map((tag) => <span>{tag}</span>)}
+    </div>
+  </div>
+  {usableLinks.length > 0 && (
+    <div class="publication-links">
+      {usableLinks.map(([label, href]) => (
+        <a href={href} target="_blank" rel="noreferrer">{label}</a>
+      ))}
+    </div>
+  )}
+</article>

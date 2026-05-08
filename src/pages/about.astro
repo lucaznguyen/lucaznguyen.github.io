@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile, affiliations } from '../data/profile';
+import { awards } from '../data/awards';
+---
+<BaseLayout title="About" description="About Thinh Nguyen (Lucaz), a Ph.D. student at VinUniversity working on trustworthy AI, federated learning, and continual learning.">
+  <section class="page-hero about-hero">
+    <div class="container page-hero-grid">
+      <div>
+        <p class="section-label">/ ABOUT</p>
+        <h1>From mathematics and data science to trustworthy AI.</h1>
+        <p>{profile.shortBio}</p>
+      </div>
+      <aside class="quick-facts-card">
+        <h2>Quick facts</h2>
+        <dl>
+          {profile.quickFacts.map(([label, value]) => (
+            <div>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div class="story-card">
+        <p class="section-label">/ STORY</p>
+        <h2>A research profile built around reliability, privacy, and adaptation.</h2>
+      </div>
+      <div class="rich-text">
+        <p>{profile.longBio}</p>
+        <p>My current research focuses on trustworthy deployment in settings where data cannot be simply pooled, model behavior shifts over time, and clients or domains may be heterogeneous. I am especially interested in methods that make AI systems more resilient without requiring raw data sharing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-mint">
+    <div class="container section-head">
+      <p class="section-label">/ AFFILIATIONS</p>
+      <h2>Academic home</h2>
+    </div>
+    <div class="container logo-grid">
+      {affiliations.map((affiliation) => (
+        <a class="logo-card card-lift" href={affiliation.url} target={affiliation.url.startsWith('http') ? '_blank' : undefined} rel={affiliation.url.startsWith('http') ? 'noreferrer' : undefined}>
+          <img src={affiliation.image} alt={`${affiliation.name} placeholder badge`} loading="lazy" />
+          <span>{affiliation.name}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="section-label">/ EDUCATION</p>
+        <h2>Education timeline</h2>
+      </div>
+      <div class="stack-list">
+        {profile.education.map((item) => (
+          <article class="stack-card card-lift">
+            <h3>{item.degree}</h3>
+            <p class="muted-text">{item.institution}</p>
+            <p>{item.detail}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-yellow">
+    <div class="container two-column">
+      <div>
+        <p class="section-label">/ AWARDS</p>
+        <h2>Selected honors</h2>
+      </div>
+      <div class="stack-list">
+        {awards.slice(0, 4).map((award) => (
+          <article class="stack-card mini-award">
+            <span>{award.year}</span>
+            <h3>{award.title}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

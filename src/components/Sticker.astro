@@ -1,0 +1,10 @@
+---
+interface Props {
+  label: string;
+  tone?: 'yellow' | 'green' | 'blue' | 'mint' | 'dark' | 'red';
+  className?: string;
+}
+
+const { label, tone = 'yellow', className = '' } = Astro.props;
+---
+<span class={`sticker sticker-${tone} ${className}`}>{label}</span>

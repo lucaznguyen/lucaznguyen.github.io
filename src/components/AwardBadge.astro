@@ -1,0 +1,14 @@
+---
+import type { Award } from '../data/types';
+
+interface Props {
+  award: Award;
+}
+
+const { award } = Astro.props;
+---
+<article class="award-badge card-lift">
+  <span>{award.year}</span>
+  <h3>{award.title}</h3>
+  {award.description && <p>{award.description}</p>}
+</article>

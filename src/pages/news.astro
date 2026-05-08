@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsTimeline from '../components/NewsTimeline.astro';
+import AwardBadge from '../components/AwardBadge.astro';
+import { news } from '../data/news';
+import { awards } from '../data/awards';
+---
+<BaseLayout title="News & Awards" description="News, awards, mentoring, and press mentions for Thinh Nguyen (Lucaz).">
+  <section class="page-hero news-hero">
+    <div class="container narrow-hero">
+      <p class="section-label">/ NEWS & AWARDS</p>
+      <h1>Updates, honors, and milestones.</h1>
+      <p>A timeline of research progress, conference activity, awards, mentoring, and media mentions.</p>
+    </div>
+  </section>
+
+  <section class="section section-yellow">
+    <div class="container section-head">
+      <p class="section-label">/ TIMELINE</p>
+      <h2>News</h2>
+    </div>
+    <div class="container">
+      <NewsTimeline items={news} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-head">
+      <p class="section-label">/ HONORS</p>
+      <h2>Awards and honors</h2>
+    </div>
+    <div class="container award-grid">
+      {awards.map((award) => <AwardBadge award={award} />)}
+    </div>
+  </section>
+
+  <section class="section section-mint">
+    <div class="container two-column">
+      <div>
+        <p class="section-label">/ MENTORING</p>
+        <h2>Teaching and mentoring</h2>
+      </div>
+      <div class="stack-list">
+        <article class="stack-card card-lift">
+          <h3>Coach / mentor, SCUDEM IX 2024 Team 1046</h3>
+          <p>Guided students on mathematical modeling for the problem Sweet Tooth and Heavy Metal. The team’s solution earned a Meritorious Award.</p>
+        </article>
+        <article class="stack-card note-card">
+          <h3>Academic service</h3>
+          <p>No reviewer, workshop organizer, student volunteer, or committee-member roles have been added yet. Edit this section when verified service records are available.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="section-label">/ MEDIA</p>
+        <h2>Media and profiles</h2>
+      </div>
+      <div class="stack-list">
+        <article class="stack-card card-lift">
+          <h3>Humans of VISHC</h3>
+          <p>Nguyen Tran Huu Thinh – Discipline, Detours, and the Pursuit of Trustworthy AI.</p>
+        </article>
+        <article class="stack-card card-lift">
+          <h3>VISHC and SAIL Lab profile pages</h3>
+          <p>Profile and lab pages can be linked here when public URLs are finalized.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

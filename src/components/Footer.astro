@@ -1,0 +1,30 @@
+---
+import { profile } from '../data/profile';
+
+const socialLinks = [
+  { label: 'Email', href: profile.links.email },
+  { label: 'GitHub', href: profile.links.github },
+  { label: 'Lab', href: profile.links.lab },
+  { label: 'Google Scholar', href: profile.links.googleScholar },
+  { label: 'LinkedIn', href: profile.links.linkedin },
+  { label: 'ORCID', href: profile.links.orcid }
+].filter((link) => link.href);
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="section-label">/ CONTACT</p>
+      <h2>Let’s talk research, collaboration, and ideas.</h2>
+      <p class="footer-note">Trustworthy AI · Federated learning · Continual learning · Domain generalization</p>
+    </div>
+    <div class="footer-links" aria-label="Contact and profile links">
+      {socialLinks.map((link) => (
+        <a href={link.href} target={link.href?.startsWith('http') ? '_blank' : undefined} rel={link.href?.startsWith('http') ? 'noreferrer' : undefined}>{link.label}</a>
+      ))}
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} {profile.displayName}</span>
+    <span>Built as a static academic homepage for GitHub Pages.</span>
+  </div>
+</footer>

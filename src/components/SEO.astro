@@ -1,0 +1,50 @@
+---
+import { profile } from '../data/profile';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const defaultTitle = 'Thinh Nguyen (Lucaz) — Ph.D. Student in Trustworthy AI';
+const defaultDescription = 'Personal academic homepage of Thinh Nguyen (Lucaz), a Ph.D. student at VinUniversity working on trustworthy AI, federated learning, continual learning, and domain generalization.';
+const { title, description = defaultDescription, image = '/assets/headshot-placeholder.svg', canonical } = Astro.props;
+const pageTitle = title ? `${title} | Thinh Nguyen (Lucaz)` : defaultTitle;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, profile.site).toString();
+const imageUrl = new URL(image, profile.site).toString();
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  alternateName: profile.displayName,
+  jobTitle: profile.role,
+  email: profile.email,
+  url: profile.site,
+  affiliation: [
+    {
+      '@type': 'CollegeOrUniversity',
+      name: profile.institution
+    },
+    {
+      '@type': 'Organization',
+      name: profile.lab
+    }
+  ],
+  sameAs: Object.values(profile.links).filter((value) => typeof value === 'string' && value.startsWith('http'))
+};
+---
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>

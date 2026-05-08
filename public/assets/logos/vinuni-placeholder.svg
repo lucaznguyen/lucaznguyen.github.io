@@ -1,0 +1,6 @@
+<svg width="420" height="140" viewBox="0 0 420 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">VinUniversity placeholder badge</title>
+  <rect x="5" y="5" width="410" height="130" rx="30" fill="#FFF7E6" stroke="#101010" stroke-width="10"/>
+  <circle cx="75" cy="70" r="34" fill="#2454FF" stroke="#101010" stroke-width="6"/>
+  <text x="126" y="80" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#101010">VinUniversity</text>
+</svg>

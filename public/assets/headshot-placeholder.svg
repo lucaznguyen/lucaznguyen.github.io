@@ -1,0 +1,17 @@
+<svg width="900" height="1080" viewBox="0 0 900 1080" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Headshot placeholder</title>
+  <desc id="desc">A playful abstract placeholder portrait for Thinh Nguyen.</desc>
+  <rect width="900" height="1080" rx="64" fill="#2454FF"/>
+  <circle cx="710" cy="190" r="140" fill="#B8FF3D" stroke="#101010" stroke-width="10"/>
+  <path d="M87 810C172 674 315 600 450 600C585 600 728 674 813 810V1080H87V810Z" fill="#FFF7E6" stroke="#101010" stroke-width="10"/>
+  <circle cx="450" cy="420" r="196" fill="#FFE45C" stroke="#101010" stroke-width="10"/>
+  <path d="M312 412C334 388 365 388 386 412" stroke="#101010" stroke-width="16" stroke-linecap="round"/>
+  <path d="M514 412C536 388 567 388 588 412" stroke="#101010" stroke-width="16" stroke-linecap="round"/>
+  <path d="M376 516C410 548 493 548 526 516" stroke="#101010" stroke-width="16" stroke-linecap="round"/>
+  <path d="M248 318C306 206 455 144 615 228C604 141 539 75 454 75C302 75 200 183 200 318C200 378 215 426 238 461C225 411 223 364 248 318Z" fill="#101010"/>
+  <rect x="95" y="98" width="285" height="70" rx="35" fill="#FFF7E6" stroke="#101010" stroke-width="8" transform="rotate(-8 95 98)"/>
+  <text x="135" y="148" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#101010" transform="rotate(-8 135 148)">PHOTO SOON</text>
+  <path d="M724 706L803 780L704 797Z" fill="#FF4D2E" stroke="#101010" stroke-width="8"/>
+  <circle cx="147" cy="601" r="53" fill="#DDFBE8" stroke="#101010" stroke-width="8"/>
+  <path d="M122 601H172M147 576V626" stroke="#101010" stroke-width="8" stroke-linecap="round"/>
+</svg>

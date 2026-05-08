@@ -1,0 +1,23 @@
+---
+import type { NewsItem } from '../data/types';
+
+interface Props {
+  items: NewsItem[];
+  limit?: number;
+}
+
+const { items, limit } = Astro.props;
+const visibleItems = typeof limit === 'number' ? items.slice(0, limit) : items;
+---
+<div class="timeline">
+  {visibleItems.map((item) => (
+    <article class="timeline-item card-lift">
+      <div class="timeline-date">{item.date}</div>
+      <div>
+        {item.type && <span class="timeline-type">{item.type}</span>}
+        <h3>{item.title}</h3>
+        {item.description && <p>{item.description}</p>}
+      </div>
+    </article>
+  ))}
+</div>

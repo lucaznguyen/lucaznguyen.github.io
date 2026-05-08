@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+import { invitedTalks, conferencePresentations, futureSpeakingTopics } from '../data/talks';
+---
+<BaseLayout title="Talks & Presentations" description="Talks, conference presentations, and future speaking topics by Thinh Nguyen (Lucaz).">
+  <section class="page-hero talks-hero">
+    <div class="container narrow-hero">
+      <p class="section-label">/ TALKS</p>
+      <h1>Talks, presentations, and research conversations.</h1>
+      <p>Seminars, conference presentations, and topics for future research discussions.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="section-label">/ INVITED TALKS</p>
+        <h2>Invited talks</h2>
+      </div>
+      <div class="stack-list">
+        {invitedTalks.length === 0 ? (
+          <article class="empty-state card-lift">
+            <h3>Invited talks will appear here.</h3>
+            <p>I am open to seminars and research discussions on trustworthy AI, federated learning, and continual learning.</p>
+            <a class="button button-dark" href={profile.links.email}>Invite me to speak</a>
+          </article>
+        ) : (
+          invitedTalks.map((talk) => (
+            <article class="stack-card card-lift">
+              <span class="timeline-type">{talk.type}</span>
+              <h3>{talk.title}</h3>
+              <p class="muted-text">{talk.event} · {talk.date} · {talk.location}</p>
+              <p>{talk.description}</p>
+            </article>
+          ))
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-yellow">
+    <div class="container two-column">
+      <div>
+        <p class="section-label">/ PRESENTATIONS</p>
+        <h2>Conference presentations</h2>
+      </div>
+      <div class="stack-list">
+        {conferencePresentations.map((talk) => (
+          <article class="stack-card card-lift">
+            <span class="timeline-type">{talk.type}</span>
+            <h3>{talk.title}</h3>
+            <p class="muted-text">{talk.event} · {talk.date} · {talk.location}</p>
+            <p>{talk.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container section-head">
+      <p class="section-label">/ FUTURE TOPICS</p>
+      <h2>Speaking topics</h2>
+    </div>
+    <div class="container topic-grid">
+      {futureSpeakingTopics.map((topic, index) => (
+        <article class="topic-card card-lift">
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <h3>{topic}</h3>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

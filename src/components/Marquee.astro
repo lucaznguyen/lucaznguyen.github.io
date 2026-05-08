@@ -1,0 +1,13 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+const repeated = [...items, ...items];
+---
+<section class="keyword-marquee" aria-label="Research keywords">
+  <div class="marquee-track">
+    {repeated.map((item) => <span>{item}</span>)}
+  </div>
+</section>

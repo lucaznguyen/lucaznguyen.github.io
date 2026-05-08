@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+import { publications } from '../data/publications';
+
+const filters = [
+  { label: 'All', value: 'all' },
+  { label: 'Featured', value: 'featured' },
+  { label: 'Accepted', value: 'accepted' },
+  { label: 'Preprint', value: 'preprint' },
+  { label: 'Federated Learning', value: 'federated learning' },
+  { label: 'Continual Learning', value: 'continual learning' },
+  { label: 'Trustworthy AI', value: 'trustworthy ai' },
+  { label: 'Computer Vision', value: 'computer vision' },
+  { label: 'Survey', value: 'survey' }
+];
+---
+<BaseLayout title="Publications" description="Selected publications and research projects by Thinh Nguyen (Lucaz).">
+  <section class="page-hero publications-hero">
+    <div class="container narrow-hero">
+      <p class="section-label">/ PUBLICATIONS</p>
+      <h1>Research works across federated, continual, and trustworthy AI.</h1>
+      <p>Selected papers, preprints, and project work. Use the filters to scan by topic or status.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container filter-bar" role="group" aria-label="Publication filters">
+      {filters.map((filter, index) => (
+        <button class="filter-button" type="button" data-filter={filter.value} aria-pressed={index === 0 ? 'true' : 'false'}>{filter.label}</button>
+      ))}
+    </div>
+    <p class="container results-note" aria-live="polite" data-results-note>Showing all research works.</p>
+    <div class="container publication-list">
+      {publications.map((publication) => <PublicationCard publication={publication} />)}
+    </div>
+  </section>
+
+  <script>
+    const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
+    const cards = Array.from(document.querySelectorAll('[data-publication-card]'));
+    const note = document.querySelector('[data-results-note]');
+
+    function applyFilter(value) {
+      let visible = 0;
+      cards.forEach((card) => {
+        const searchable = card.getAttribute('data-search') || '';
+        const shouldShow = value === 'all' || searchable.includes(value);
+        card.toggleAttribute('hidden', !shouldShow);
+        if (shouldShow) visible += 1;
+      });
+      if (note) {
+        note.textContent = value === 'all'
+          ? 'Showing all research works.'
+          : `Showing ${visible} research work${visible === 1 ? '' : 's'} for “${value}”.`;
+      }
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.getAttribute('data-filter') || 'all';
+        filterButtons.forEach((other) => other.setAttribute('aria-pressed', String(other === button)));
+        applyFilter(value);
+      });
+    });
+  </script>
+</BaseLayout>
