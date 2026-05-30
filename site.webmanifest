@@ -1,0 +1,9 @@
+{
+  "name": "Thinh Nguyen (Lucaz)",
+  "short_name": "Lucaz",
+  "description": "Academic homepage of Thinh Nguyen (Lucaz), Ph.D. student in Trustworthy AI.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f1e9",
+  "theme_color": "#171717"
+}
