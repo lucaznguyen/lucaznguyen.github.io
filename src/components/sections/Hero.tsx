@@ -44,9 +44,6 @@ export function Hero() {
               <ButtonLink href="/publications" variant="outline">
                 View Publications
               </ButtonLink>
-              <ButtonLink href="/notes" variant="ghost">
-                Read Notes
-              </ButtonLink>
               <ButtonLink href="/contact" variant="accent">
                 Contact
               </ButtonLink>

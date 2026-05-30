@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <SectionHeader
         eyebrow="/ Projects"
         title="Applied research, competition work, and academic tools."
-        description="A project layer for research artifacts that sit next to publications and notes."
+        description="A project layer for research artifacts, competition work, and academic tooling."
       />
       <div className="mx-auto grid max-w-7xl gap-4 px-5 sm:px-8 lg:grid-cols-3 lg:px-10">
         {projects.map((project, index) => (

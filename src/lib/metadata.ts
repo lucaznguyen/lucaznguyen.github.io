@@ -4,7 +4,7 @@ import { socials } from "@/data/socials";
 import { absoluteUrl } from "@/lib/utils";
 
 export const siteConfig = {
-  title: "Thinh Nguyen (Lucaz) — Ph.D. Student in Trustworthy AI",
+  title: "Thinh Nguyen (Lucaz) - Ph.D. Student in Trustworthy AI",
   description:
     "Academic homepage of Thinh Nguyen (Lucaz), a Ph.D. student at VinUniversity working on Trustworthy AI, Federated Learning, Continual Learning, and Domain Generalization.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lucaznguyen.github.io",
