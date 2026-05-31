@@ -48,7 +48,6 @@ export function Footer() {
       </div>
       <div className="mx-auto flex max-w-7xl flex-col gap-3 border-t border-white/10 px-5 py-6 text-sm text-cream/55 sm:px-8 md:flex-row md:items-center md:justify-between lg:px-10">
         <span>© {new Date().getFullYear()} Thinh Nguyen (Lucaz).</span>
-        <span>Vercel-ready academic homepage.</span>
       </div>
     </footer>
   );

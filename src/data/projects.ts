@@ -36,7 +36,7 @@ export const projects: Project[] = [
       "A lightweight tool for maintaining academic CV content and generating clean CV outputs from structured profile data.",
     tags: ["Academic Tool", "CV Automation", "Structured Content", "GitHub"],
     status: "Tool",
-    href: "https://github.com/lucaznguyen/cv-generator",
+    href: "http://lucaznguyen.github.io/cv-generator",
   },
   {
     id: "fedatlas",
