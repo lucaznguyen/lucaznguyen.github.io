@@ -41,10 +41,10 @@ export const projects: Project[] = [
   {
     id: "fedatlas",
     title: "FedAtlas",
-    context: "Federated learning mapping",
-    role: "Coming soon / dashboard project",
+    context: "Shiny dashboard",
+    role: "Interactive federated learning atlas",
     summary:
-      "A planned visual analytics dashboard for mapping federated learning papers, countries, topics, citations, and GitHub implementations to reveal communities and research-to-code gaps.",
+      "An interactive visual analytics dashboard for mapping federated learning papers, countries, topics, citations, and GitHub implementations to reveal communities and research-to-code gaps.",
     tags: [
       "Federated Learning",
       "Research-to-Code Mapping",
@@ -53,6 +53,7 @@ export const projects: Project[] = [
       "GitHub",
       "Shiny Dashboard",
     ],
-    status: "Coming Soon",
+    status: "Tool",
+    href: "https://lucaznguyen.shinyapps.io/fedatlas/",
   },
 ];
