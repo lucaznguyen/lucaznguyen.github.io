@@ -78,6 +78,59 @@ export const publications: Publication[] = [
     links: [{ label: "arXiv", href: "https://arxiv.org/abs/2508.05157" }],
   },
   {
+    id: "projected-rehearsal-fcil-2026",
+    title:
+      "When Generator Replay Degrades: Projected Rehearsal Orchestration for Heterogeneous Federated Class-Incremental Learning",
+    authors: [
+      "Thinh T. H. Nguyen",
+      "Khoa D. Doan",
+      "Binh T. Nguyen",
+      "Danh Le-Phuoc",
+      "Kok-Seng Wong",
+    ],
+    venue: "arXiv preprint",
+    year: 2026,
+    summary:
+      "Introduces PRO and PRO-MAX, projected rehearsal methods for heterogeneous federated class-incremental learning that replace input-space replay with compact projected memories.",
+    tags: [
+      "Federated Continual Learning",
+      "Federated Learning",
+      "Continual Learning",
+      "Class-Incremental Learning",
+      "Projected Rehearsal",
+      "Trustworthy AI",
+    ],
+    status: "Preprint",
+    featured: true,
+    links: [{ label: "arXiv", href: "https://arxiv.org/abs/2606.15695" }],
+  },
+  {
+    id: "molecular-graph-backdoors-2026",
+    title: "Rethinking Molecular Graph Backdoors under Chemistry-aware Admission",
+    authors: [
+      "Thinh T. H. Nguyen",
+      "Sze Jue Yang",
+      "Khoa D. Doan",
+      "Chee Seng Chan",
+      "Kok-Seng Wong",
+    ],
+    venue: "arXiv preprint",
+    year: 2026,
+    summary:
+      "Studies molecular GNN backdoors under chemistry-aware admission, introducing ChemGuard for realistic admission checks and ChemBack for chemically feasible backdoor construction.",
+    tags: [
+      "Molecular Graph Learning",
+      "Graph Neural Networks",
+      "Backdoor Attacks",
+      "AI Security",
+      "Chemistry-Aware ML",
+      "Trustworthy AI",
+    ],
+    status: "Preprint",
+    featured: true,
+    links: [{ label: "arXiv", href: "https://arxiv.org/abs/2606.23361" }],
+  },
+  {
     id: "fedgtg-2024",
     title:
       "Overcoming Catastrophic Forgetting in Federated Class-Incremental Learning via Federated Global Twin Generator",
