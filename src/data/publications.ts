@@ -78,6 +78,34 @@ export const publications: Publication[] = [
     links: [{ label: "arXiv", href: "https://arxiv.org/abs/2508.05157" }],
   },
   {
+    id: "hero-fcl-benchmark-2026",
+    title: "HERO: A Heterogeneity-Aware Benchmark Library for Federated Continual Learning",
+    authors: [
+      "Thinh T. H. Nguyen",
+      "Le-Tuan Nguyen",
+      "Minh-Duong Nguyen",
+      "Nhi Trinh",
+      "Anh Tran Nam Nguyet",
+      "Dung D. Le",
+      "Kok-Seng Wong",
+    ],
+    venue: "arXiv preprint",
+    year: 2026,
+    summary:
+      "Introduces a benchmark library for reproducible federated continual learning evaluation across task splits, client data heterogeneity, task-order mismatch, and domain shift.",
+    tags: [
+      "Federated Continual Learning",
+      "Benchmarking",
+      "Data Heterogeneity",
+      "Task Order Mismatch",
+      "Domain Shift",
+      "Reproducibility",
+    ],
+    status: "Preprint",
+    featured: true,
+    links: [{ label: "arXiv", href: "https://arxiv.org/abs/2607.08784" }],
+  },
+  {
     id: "projected-rehearsal-fcil-2026",
     title:
       "When Generator Replay Degrades: Projected Rehearsal Orchestration for Heterogeneous Federated Class-Incremental Learning",

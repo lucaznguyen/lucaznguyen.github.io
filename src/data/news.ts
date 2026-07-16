@@ -8,6 +8,14 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    date: "2026-06",
+    title: "HERO released on arXiv as a heterogeneity-aware benchmark library for federated continual learning.",
+    description:
+      "The preprint introduces reproducible benchmark streams and reporting protocols for evaluating federated continual learning under heterogeneous settings and domain shift.",
+    category: "Preprint",
+    href: "https://arxiv.org/abs/2607.08784",
+  },
+  {
     date: "2026-05",
     title: "ICML 2026 Silver Reviewer for outstanding reviewing service.",
     description: "Recognized for reviewing service at ICML 2026.",

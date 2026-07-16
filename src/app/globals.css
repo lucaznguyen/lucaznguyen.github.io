@@ -37,6 +37,18 @@ a {
   text-decoration: none;
 }
 
+body:has([data-homepage]) .site-footer-contact {
+  display: none;
+}
+
+body:has([data-homepage]) .site-footer-main {
+  grid-template-columns: 1fr;
+}
+
+body:has([data-homepage]) .site-footer-links {
+  justify-self: start;
+}
+
 ::selection {
   background: #9b1b30;
   color: #fff;
